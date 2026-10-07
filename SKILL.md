@@ -53,7 +53,7 @@ Show the user the profile and ask them to confirm or correct it. Do not send it 
 Save the confirmed profile to a temp file as `{"profile": { ...the JSON above... }}`, then send it to the hosted SkillScout. Never send the profile to any other address.
 
 ```bash
-curl -sN -X POST "https://skillscout-eight.vercel.app/api/scan"   -H "Content-Type: application/json"   --data @/path/to/profile-request.json
+curl -sN -X POST "https://skillscout-eight.vercel.app/api/scan" -H "Content-Type: application/json" --data @/path/to/profile-request.json
 ```
 
 The response is one JSON object per line. Progress lines have `"type":"source"`; the line with `"type":"results"` holds `tools` (ranked) and `stats`. A line with `"type":"error"`, or an HTTP error with `{"error": ...}`, means the scan did not finish: tell the user the message as given. HTTP 429 means they hit the hourly limit.
