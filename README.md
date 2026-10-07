@@ -4,7 +4,7 @@ A Claude Code skill that finds AI tools, skills, plugins and MCP servers that fi
 
 It reads your Claude Code setup (CLAUDE.md files, memory, installed skills and MCP servers), drafts a profile of you, and shows it to you first. Nothing leaves your machine until you say yes. Then it scans 25 free sources and ranks what fits, with a reason and an install command for each pick.
 
-Not on Claude Code? Use the website instead, with any AI: https://skillscout-eight.vercel.app
+Not on Claude Code? Use the website instead, with any AI: https://skillscout.si
 
 ## Install
 

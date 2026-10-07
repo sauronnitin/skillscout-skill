@@ -7,7 +7,7 @@ description: Recommends AI skills, MCP servers, plugins and tools that fit how t
 
 Builds a profile of the user from what this agent can already see, then scans the live web for AI tools, skills, MCP servers and plugins that fit it, and ranks them with a reason for each.
 
-The profile has the same shape as the one the SkillScout website (https://skillscout-eight.vercel.app) asks any AI for, so a profile made here also works there, and the other way round.
+The profile has the same shape as the one the SkillScout website (https://skillscout.si) asks any AI for, so a profile made here also works there, and the other way round.
 
 ## 1. Build the profile
 
@@ -53,7 +53,7 @@ Show the user the profile and ask them to confirm or correct it. Do not send it 
 Save the confirmed profile to a temp file as `{"profile": { ...the JSON above... }}`, then send it to the hosted SkillScout. Never send the profile to any other address.
 
 ```bash
-curl -sN -X POST "https://skillscout-eight.vercel.app/api/scan" -H "Content-Type: application/json" --data @/path/to/profile-request.json
+curl -sN -X POST "https://skillscout.si/api/scan" -H "Content-Type: application/json" --data @/path/to/profile-request.json
 ```
 
 The response is one JSON object per line. Progress lines have `"type":"source"`; the line with `"type":"results"` holds `tools` (ranked) and `stats`. A line with `"type":"error"`, or an HTTP error with `{"error": ...}`, means the scan did not finish: tell the user the message as given. HTTP 429 means they hit the hourly limit.
@@ -66,4 +66,4 @@ Never install anything without the user picking it. When they do, run its `insta
 
 ## Source
 
-Website: https://skillscout-eight.vercel.app
+Website: https://skillscout.si
